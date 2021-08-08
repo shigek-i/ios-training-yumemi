@@ -36,6 +36,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdG-cz-h0M">
                                 <rect key="frame" x="235.5" y="652" width="47" height="30"/>
                                 <state key="normal" title="Reload"/>
+                                <connections>
+                                    <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQP-N4-uhg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHU-k2-B4r">
                                 <rect key="frame" x="103.5" y="551.5" width="103.5" height="20.5"/>
@@ -62,6 +65,10 @@
                             <constraint firstItem="oov-7o-wMx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="guw-bx-1jZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reloadButton" destination="KdG-cz-h0M" id="igX-F3-ZQk"/>
+                        <outlet property="weatherImageView" destination="oov-7o-wMx" id="zOF-ui-e2L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
