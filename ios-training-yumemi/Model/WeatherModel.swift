@@ -7,11 +7,20 @@
 
 import Foundation
 import YumemiWeather
+import UIKit
 
-enum Weather: String {
+enum Weather: String, CaseIterable {
     case sunny
     case cloudy
     case rainy
+    
+    var color: UIColor {
+        switch self {
+        case .sunny: return UIColor.red
+        case .cloudy: return UIColor.gray
+        case .rainy: return UIColor.blue
+        }
+    }
 }
 
 struct WeatherModel {
