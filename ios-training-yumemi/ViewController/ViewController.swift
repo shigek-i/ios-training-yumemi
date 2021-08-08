@@ -14,9 +14,20 @@ class ViewController: UIViewController {
     
     var weatherModel: WeatherModel = WeatherModel()
     
+    var weatherImages: [Weather: UIImage] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // 画像取得
+        for weather in Weather.allCases {
+            guard let image = UIImage(named: weather.rawValue) else {
+                continue
+            }
+            
+            weatherImages[weather] = image
+        }
         
         // 天気を取得
         weatherModel.getWeather()
@@ -34,11 +45,11 @@ class ViewController: UIViewController {
     func reloadWeatherImage() {
         guard
             let weather = weatherModel.weather,
-            let image = UIImage(named: weather.rawValue)
+            let image = weatherImages[weather]
         else {
             return
         }
-        
         weatherImageView.image = image
+        weatherImageView.tintColor = weather.color
     }
 }
