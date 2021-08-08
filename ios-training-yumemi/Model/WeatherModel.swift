@@ -15,7 +15,7 @@ enum Weather: String {
 }
 
 struct WeatherModel {
-    var weather: Weather
+    var weather: Weather?
     
     mutating func getWeather() {
         guard let weather = Weather(rawValue: YumemiWeather.fetchWeather()) else {
