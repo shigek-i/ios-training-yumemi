@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func reloadButtonTapped(_ sender: Any) {
+        weatherModel.getWeather()
+        reloadWeatherImage()
     }
     
     /// 天気画像を更新する
